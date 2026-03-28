@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Love ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background: #ffcccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial;
+    overflow: hidden;
+}
+
+.heart {
+    font-size: 40px;
+    color: red;
+    cursor: pointer;
+    text-align: center;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.content {
+    display: none;
+    text-align: center;
+}
+
+img {
+    width: 250px;
+    border-radius: 20px;
+}
+
+.text {
+    font-size: 20px;
+    color: #990000;
+    margin-top: 10px;
+}
+
+.heart-float {
+    position: absolute;
+    color: red;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); }
+    100% { transform: translateY(-10vh); }
+}
+</style>
+</head>
+
+<body>
+
+<div id="start">
+    <div class="heart" onclick="showLove()">
+        ❤️<br>Click here, my love
+    </div>
+</div>
+
+<div class="content" id="loveContent">
+    <img src="bb.jpg.jpg">
+    <div class="text">
+        rajli l3ziz kanbghik bzf ❤️<br>
+        w bagha nkml hyati m3ak w nsafro ana wyak<br>
+        w n3mlo ga3 li hlmna bih<br>
+        ana fakhora bik w lah ykhalik lili<br>
+        w sbar ela qbli 💖
+    </div>
+</div>
+
+<script>
+function showLove() {
+    document.getElementById("start").style.display = "none";
+    document.getElementById("loveContent").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart-float");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = Math.random() * 20 + 10 + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
